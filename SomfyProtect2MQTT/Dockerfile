@@ -4,7 +4,7 @@ FROM $BUILD_FROM
 ENV LANG C.UTF-8
 
 # SomfyProtect2MQTT version
-ARG VERSION=2024.1.0
+ARG VERSION=0.0.1
 
 # Install required packages
 RUN apk add --no-cache py3-pip py3-opencv ffmpeg
@@ -12,7 +12,7 @@ RUN pip3 install --no-cache-dir python-json2yaml==0.1.1
 
 # Download source and untar
 WORKDIR /usr/bin
-ADD "https://github.com/Minims/SomfyProtect2MQTT/archive/refs/tags/${VERSION}.tar.gz" ${VERSION}.tar.gz
+ADD "https://github.com/NCoiby/SomfyProtect2MQTT/archive/refs/tags/${VERSION}.tar.gz" ${VERSION}.tar.gz
 RUN tar -xvf ${VERSION}.tar.gz
 RUN mv /usr/bin/SomfyProtect2MQTT-${VERSION} /usr/bin/SomfyProtect2MQTT
 
